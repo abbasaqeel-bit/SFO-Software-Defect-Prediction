@@ -252,9 +252,6 @@ def save_selected_features(
             )
 
 
-# =========================================================
-# تحميل النتائج السابقة للاستكمال
-# =========================================================
 
 def load_existing_results():
     if (
@@ -304,9 +301,6 @@ def build_completed_experiment_keys(existing_df):
     return completed_keys
 
 
-# =========================================================
-# حفظ النتائج الخام تدريجياً
-# =========================================================
 
 def save_progress(results_records):
     progress_df = pd.DataFrame(
@@ -319,9 +313,6 @@ def save_progress(results_records):
     )
 
 
-# =========================================================
-# إنشاء الجداول النهائية
-# =========================================================
 
 def generate_summary_tables(results_df):
 
@@ -379,10 +370,6 @@ def generate_summary_tables(results_df):
         index=False
     )
 
-    # -----------------------------------------------------
-    # جدول الدقة المشابه لجدول ورقة FSBOA
-    # -----------------------------------------------------
-
     accuracy_table = (
         results_df
         .groupby([
@@ -410,9 +397,6 @@ def generate_summary_tables(results_df):
         index=False
     )
 
-    # -----------------------------------------------------
-    # جدول مقاييس الفئة المعيبة
-    # -----------------------------------------------------
 
     defective_metrics = (
         results_df
@@ -465,10 +449,6 @@ def generate_summary_tables(results_df):
         defective_metrics
     )
 
-
-# =========================================================
-# البرنامج الرئيس
-# =========================================================
 
 def main():
 
@@ -540,9 +520,6 @@ def main():
         f"Already completed: {len(completed_keys)}"
     )
 
-    # =====================================================
-    # حلقة الخوارزميات
-    # =====================================================
 
     for algorithm_name in ALGORITHMS_TO_RUN:
 
@@ -578,10 +555,6 @@ def main():
             f"Source: {implementation_source}"
         )
         print("#" * 100)
-
-        # =================================================
-        # حلقة قواعد البيانات
-        # =================================================
 
         for dataset_name in DATASETS_INFO.keys():
 
@@ -643,19 +616,11 @@ def main():
                 f"{class_distribution}"
             )
 
-            # =============================================
-            # حلقة المصنفات
-            # =============================================
-
             for classifier_name, classifier in classifiers.items():
 
                 print(
                     f"\nClassifier: {classifier_name}"
                 )
-
-                # =========================================
-                # حلقة التشغيلات المستقلة
-                # =========================================
 
                 for run_number in range(
                     1,
@@ -681,10 +646,6 @@ def main():
                     )
 
                     try:
-                        # ---------------------------------
-                        # Outer split:
-                        # الاختبار النهائي لا تراه الخوارزمية
-                        # ---------------------------------
 
                         (
                             X_outer_train,
@@ -698,10 +659,7 @@ def main():
                             random_state=run_number
                         )
 
-                        # ---------------------------------
-                        # Inner split:
-                        # يستخدم في اختيار الميزات
-                        # ---------------------------------
+
 
                         (
                             X_inner_train,
@@ -715,9 +673,6 @@ def main():
                             random_state=run_number
                         )
 
-                        # ---------------------------------
-                        # Scaling لمرحلة Feature Selection
-                        # ---------------------------------
 
                         inner_scaler = StandardScaler()
 
@@ -735,9 +690,7 @@ def main():
 
                         start_time = time.perf_counter()
 
-                        # ---------------------------------
-                        # Wrapper العام
-                        # ---------------------------------
+
 
                         feature_selector = (
                             OptimizerFeatureSelectionWrapper(
@@ -780,9 +733,7 @@ def main():
                                 "an empty feature subset."
                             )
 
-                        # ---------------------------------
-                        # التقييم النهائي المستقل
-                        # ---------------------------------
+
 
                         final_scaler = StandardScaler()
 
@@ -829,9 +780,6 @@ def main():
                             - start_time
                         )
 
-                        # ---------------------------------
-                        # حفظ منحنى التقارب
-                        # ---------------------------------
 
                         save_convergence(
                             algorithm_name=algorithm_name,
@@ -848,9 +796,7 @@ def main():
                             )
                         )
 
-                        # ---------------------------------
-                        # حفظ الميزات المختارة
-                        # ---------------------------------
+
 
                         save_selected_features(
                             algorithm_name=algorithm_name,
@@ -1016,9 +962,7 @@ def main():
                             results_records
                         )
 
-    # =====================================================
-    # إنشاء النتائج النهائية
-    # =====================================================
+
 
     results_df = pd.DataFrame(
         results_records
