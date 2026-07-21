@@ -9,6 +9,7 @@ authors:
   - family-names: "Kareem"
     given-names: "Abbas Aqeel"
     affiliation: "Middle Technical University, Baghdad, Iraq"
+    orcid: https://orcid.org/0009-0009-8890-1906
 
 abstract: >
   FSSFO is a computationally efficient wrapper-based feature selection
