@@ -349,7 +349,6 @@ Generated result files should be retained so that the reported tables and conver
 
 ---
 
-
 ## Author
 
 **Abbas Aqeel Kareem**  
@@ -357,5 +356,32 @@ Department of Cybersecurity Engineering Techniques
 Technical Engineering College of Artificial Intelligence  
 Middle Technical University  
 Baghdad, Iraq
+
+---
+## Citation
+
+The software release used in this study is permanently archived on Zenodo:
+
+> Kareem, A. A. (2026). *FSSFO: Wrapper-Based Feature Selection for Software Defect Prediction* (Version 1.0.1) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.21481165
+
+### BibTeX
+
+```bibtex
+@software{kareem2026fssfo,
+  author    = {Kareem, Abbas Aqeel},
+  title     = {FSSFO: Wrapper-Based Feature Selection for Software Defect Prediction},
+  version   = {1.0.1},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.21481165},
+  url       = {https://doi.org/10.5281/zenodo.21481165}
+}
+```
+
+### Repository citation
+
+GitHub can generate citation formats automatically from the [`CITATION.cff`](CITATION.cff) file. Select **Cite this repository** from the repository sidebar to obtain APA and BibTeX formats.
+
+The corresponding research-paper citation will be added after publication.
 
 ---
