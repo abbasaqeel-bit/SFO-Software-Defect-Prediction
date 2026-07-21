@@ -1,0 +1,50 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+
+title: "FSSFO: Wrapper-Based Feature Selection for Software Defect Prediction"
+type: software
+version: "1.0.1"
+
+authors:
+  - family-names: "Kareem"
+    given-names: "Abbas Aqeel"
+    affiliation: "Middle Technical University, Baghdad, Iraq"
+
+abstract: >
+  FSSFO is a computationally efficient wrapper-based feature selection
+  framework that adapts the Swift Flight Optimizer to the binary
+  software-metric selection problem for software defect prediction.
+  The repository includes the proposed FSSFO implementation, comparison
+  optimizers, NASA/PROMISE dataset-processing scripts, four machine-learning
+  classifiers, experimental evaluation utilities, result-generation scripts,
+  and convergence-analysis tools.
+
+keywords:
+  - "software defect prediction"
+  - "feature selection"
+  - "Swift Flight Optimizer"
+  - "wrapper-based feature selection"
+  - "metaheuristic optimization"
+  - "machine learning"
+  - "NASA/PROMISE datasets"
+  - "class imbalance"
+
+license: MIT
+
+repository-code: "https://github.com/abbasaqeel-bit/SFO-Software-Defect-Prediction"
+url: "https://doi.org/10.5281/zenodo.21481165"
+doi: "10.5281/zenodo.21481165"
+
+preferred-citation:
+  type: software
+  title: "FSSFO: Wrapper-Based Feature Selection for Software Defect Prediction"
+  version: "1.0.1"
+  year: 2026
+  authors:
+    - family-names: "Kareem"
+      given-names: "Abbas Aqeel"
+      affiliation: "Middle Technical University, Baghdad, Iraq"
+  publisher:
+    name: "Zenodo"
+  doi: "10.5281/zenodo.21481165"
+  url: "https://doi.org/10.5281/zenodo.21481165"
